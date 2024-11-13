@@ -19,5 +19,8 @@ macro_rules! println {
     () => { $crate::print!("\n") };
     ($($arg:tt)*) => {
         $crate::io::__print_impl(format_args!("{}\n", format_args!($($arg)*)));
+        // Exercise: print_with_color
+        // https://www.ditig.com/publications/256-colors-cheat-sheet
+        //$crate::io::__print_impl(format_args!("\x1b[38;5;6m{}\x1b[0m\n", format_args!($($arg)*)));
     }
 }
